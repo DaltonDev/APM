@@ -30,7 +30,7 @@
         <tbody>
           <!--"product" here below can be set to anything and use in <td>
           for example let test of products will be test.productName etc-->
-          <tr *ngFor="let product of products">
+          <tr *ngFor="let product of products | productFilter:listFilter">
             <td>
               <img *ngIf="showImage"
                   [src]="product.imageUrl" [title]="product.productName"
