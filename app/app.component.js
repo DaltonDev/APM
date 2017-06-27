@@ -8,6 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 //import keyword {Member name} from Angular library module name
 var core_1 = require("@angular/core");
+//Import the service
+var product_service_1 = require("./products/product.service");
 //Component metadata
 //Decorators (@) adds metadata to a class or its method arguments
 var AppComponent = (function () {
@@ -19,7 +21,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "         <!--template is the layout for the view-->\n        <div><h1>{{pageTitle}}</h1> <!--double {{ }} to bind name from class below-->\n          <pm-products></pm-products>\n        </div>\n    "
+        template: "         <!--template is the layout for the view-->\n        <div><h1>{{pageTitle}}</h1> <!--double {{ }} to bind name from class below-->\n          <pm-products></pm-products>\n        </div>\n    ",
+        providers: [product_service_1.ProductService]
     })
     //First simple class that has a name (pageTitle) and a strong type (string)
 ], AppComponent);

@@ -1,6 +1,7 @@
 //import keyword {Member name} from Angular library module name
 import { Component } from '@angular/core';
-
+//Import the service
+import { ProductService } from './products/product.service';
 
 //Component metadata
 //Decorators (@) adds metadata to a class or its method arguments
@@ -10,7 +11,8 @@ import { Component } from '@angular/core';
         <div><h1>{{pageTitle}}</h1> <!--double {{ }} to bind name from class below-->
           <pm-products></pm-products>
         </div>
-    `
+    `,
+    providers: [ProductService]
 })
 //First simple class that has a name (pageTitle) and a strong type (string)
 export class AppComponent {
