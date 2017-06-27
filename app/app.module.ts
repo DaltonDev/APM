@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ProductFilterPipe } from './products/product-filter.pipe';
-import { StarComponent } from './shared/star-component'
+import { StarComponent } from './shared/star-component';
+import { HttpModule } from '@angular/http';
 
 //Add stuff here that we want to use. See ProductListComponent for example
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,

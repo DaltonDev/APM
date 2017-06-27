@@ -13,6 +13,7 @@ var app_component_1 = require("./app.component");
 var product_list_component_1 = require("./products/product-list.component");
 var product_filter_pipe_1 = require("./products/product-filter.pipe");
 var star_component_1 = require("./shared/star-component");
+var http_1 = require("@angular/http");
 //Add stuff here that we want to use. See ProductListComponent for example
 var AppModule = (function () {
     function AppModule() {
@@ -23,7 +24,8 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            http_1.HttpModule
         ],
         declarations: [
             app_component_1.AppComponent,
