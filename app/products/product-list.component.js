@@ -47,11 +47,16 @@ var ProductListComponent = (function () {
             }
         ];
     }
+    ProductListComponent.prototype.onNotify = function (message) { };
     ProductListComponent.prototype.ngOnInit = function () {
         console.log('In OnInit');
     };
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
+    };
+    //Function to set the title to whatever the rating is when clicked
+    ProductListComponent.prototype.onRatingClicked = function (message) {
+        this.pageTitle = 'Product List: ' + message;
     };
     return ProductListComponent;
 }());

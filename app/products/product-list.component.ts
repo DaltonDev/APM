@@ -9,6 +9,7 @@ import { IProduct } from './product';
   styleUrls: ['product-list.component.css']
 })
 export class ProductListComponent implements OnInit{
+  onNotify(message: string): void { }
   pageTitle: string = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;
@@ -53,5 +54,9 @@ export class ProductListComponent implements OnInit{
 
   toggleImage(): void{
     this.showImage = !this.showImage;
+  }
+  //Function to set the title to whatever the rating is when clicked
+  onRatingClicked(message: string): void{
+    this.pageTitle = 'Product List: ' + message;
   }
 }
