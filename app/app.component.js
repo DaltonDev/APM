@@ -21,7 +21,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "         <!--template is the layout for the view-->\n        <div><h1>{{pageTitle}}</h1> <!--double {{ }} to bind name from class below-->\n          <pm-products></pm-products>\n        </div>\n    ",
+        template: "         <!--template is the layout for the view-->\n    <div>\n      <nav class='navbar navbar-default'>\n        <div class='container-fluid'>\n          <a class=\"navbar-brand\">{{pageTitle}}</a>\n          <ul class=\"nav navbar-nav\">\n            <li><a [routerLink]=\"['/welcome']\">Home</a></li>\n            <li><a [routerLink]=\"['/products']\">Product List</a></li>\n          </ul>\n        </div>\n      </nav>\n      <div class=\"container\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n    ",
         providers: [product_service_1.ProductService]
     })
     //First simple class that has a name (pageTitle) and a strong type (string)
