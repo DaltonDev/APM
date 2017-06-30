@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import { IProduct } from './product';
+import { ProductDetailComponent } from './product-detail.component';
 import { Http, Response } from '@angular/http';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
@@ -13,7 +15,8 @@ import 'rxjs/add/operator/map';
 export class ProductService{
   private _productUrl = 'api/products/products.json';
 
-  constructor(private _http: Http) {}
+  constructor(private _http: Http,
+              private _route: ActivatedRoute) {}
 
 //Product array
   getProducts(): Observable <IProduct[]>{
@@ -22,6 +25,11 @@ export class ProductService{
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
+  getProduct(id: number): Observable<IProduct> {
+         return this.getProducts()
+             .map((products: IProduct[]) => products.find(p => p.productId === id));
+     }
+
   private handleError(error: Response){
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
